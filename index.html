@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio Técnico Electrónico y de Electrodomésticos a Domicilio | Bogotá</title>
+    <meta name="description" content="Servicio técnico electrónico especializado a domicilio en Bogotá. Reparación de lavadoras, televisores, microondas y línea blanca con honestidad y garantía.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --primary-light: #334155;
+            --accent: #16a34a;
+            --accent-hover: #15803d;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header / Nav */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-cta {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .header-cta:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+            color: white;
+            padding: 5rem 1.5rem 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Us / Trust Section */
+        .trust-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .trust-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* About / Professional Profile */
+        .about-box {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            background: linear-gradient(to right, #eff6ff, #f8fafc);
+            border: 1px solid #bfdbfe;
+            border-radius: 16px;
+            padding: 3rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-location {
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+            .about-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <span>⚡</span> Soporte Técnico Especializado
+        </div>
+        <a href="https://wa.me/573000000000?text=Hola,%20necesito%20una%20visita%20técnica%20a%20domicilio" class="header-cta" target="_blank" rel="noopener">Contactar WhatsApp</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Soluciones Electrónicas Profesionales Directo en su Hogar</h1>
+            <p>Años de experiencia en diagnóstico, mantenimiento y reparación de electrodomésticos y equipos electrónicos en Bogotá. Honestidad, puntualidad y garantía en cada servicio.</p>
+            <a href="https://wa.me/573000000000?text=Hola,%20necesito%20una%20visita%20técnica%20a%20domicilio" class="btn-primary" target="_blank" rel="noopener">
+                Agendar Visita Técnica
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Services Section -->
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <p>Atención especializada a domicilio sin necesidad de trasladar sus equipos</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Línea Blanca y Electrodomésticos</h3>
+                <p>Diagnóstico y reparación de lavadoras, microondas, hornos y sistemas eléctricos residenciales con total seguridad.</p>
+            </div>
+            <div class="service-card">
+                <h3>Electrónica y Entretenimiento</h3>
+                <p>Revisión experta de televisores, componentes de audio y tarjetas electrónicas de control averiadas.</p>
+            </div>
+            <div class="service-card">
+                <h3>Diagnóstico Preciso a Domicilio</h3>
+                <p>Evaluación técnica profesional en su hogar para identificar la raíz de la falla antes de realizar cualquier intervención.</p>
+            </div>
+        </div>
+
+        <!-- Trust Section -->
+        <div class="trust-section">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h4>🛠️ Experiencia Comprobada</h4>
+                    <p>Amplia trayectoria profesional en electrónica aplicada y resolución de fallas complejas.</p>
+                </div>
+                <div class="trust-item">
+                    <h4>🔍 Transparencia Total</h4>
+                    <p>Cotizaciones claras y honestas. Usted conoce el costo exacto de la mano de obra y los repuestos.</p>
+                </div>
+                <div class="trust-item">
+                    <h4>⏱️ Puntualidad y Respeto</h4>
+                    <p>Compromiso absoluto con los tiempos acordados y el cuidado dentro de su hogar.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Professional -->
+        <div class="about-box">
+            <div class="about-content">
+                <h3>Respaldo y Profesionalismo</h3>
+                <p>Entendemos que un equipo dañado interrumpe la tranquilidad de su hogar. Por eso ofrecemos un servicio enfocado en la solución definitiva, utilizando herramientas profesionales y métodos rigurosos de diagnóstico.</p>
+                <p><strong>Cobertura:</strong> Servicio disponible en Bogotá y zonas cercanas. ¡Escríbanos y coordinamos su revisión técnica!</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-location">Bogotá D.C., Colombia</p>
+        <p>Servicio Técnico Profesional a Domicilio</p>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #64748b;">&copy; 2026 Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
